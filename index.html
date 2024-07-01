@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>部分官方兽医在线模拟考试参考答案搜索</title>
+    <style>
+        form {
+    text-align: center
+}
+
+h {
+    text-align: center;
+    color: red
+}
+
+#searchInput {
+    width: 50%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #1a73e8;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+#searchBtn {
+    width: 100px;
+    height: 42px;
+    border: 2px solid #1a73e8;
+    border-radius: 8px;
+    outline: none;
+    background: #1a73e8;
+    color: #fff;
+    font-size: 16px;
+	font-weight: bold;
+}
+div{
+	width:70%;
+	margin-left:15%
+}
+
+@media (max-device-width:1080px) {
+    #searchInput {
+        margin: 1% 0 1% 2%;
+        border-radius: 16px;
+        float: left;
+        width: 92%;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    #searchBtn {
+        margin: 0% 0% 3% 2%;
+        border-radius: 16px;
+        float: left;
+        width: 96%;
+        height: 42px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+	div{
+		width:98%;
+		margin-left:1%
+	}
+}
+    </style>
+    <script src="data.js"></script>
+    <script src="search.js"></script>
+</head>
+
+<body>
+    <form id="searchForm" onsubmit="event.preventDefault(); searchQuestions();">
+		<h2 id="title"></h2>
+        <input type="text" id="searchInput" placeholder="输入关键词进行搜索">
+        <button type="submit" id="searchBtn">搜 索</button>
+    </form>
+    <br>
+    <div id="results"></div>
+    <script>
+		var len=jsonData.data.length
+		document.getElementById('title').innerHTML='部分官方兽医在线模拟考试<br>参考答案搜索（'+len+'题）'
+        document.getElementById('searchInput').addEventListener('click', function() {
+            this.value = '';
+        });
+    </script>
+</body>
+
+</html>
